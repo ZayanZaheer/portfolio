@@ -28,7 +28,7 @@ const Hero = () => {
                 />
 
                 <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl'>
-                    Hi, I&apos;m Zayan, a Junior Software Developer currently studying in Malaysia
+                    Hi, I&apos;m Zayan and I build things on the internet. I am a Full Stack Software Engineer.
                 </p>
 
                 <a href='#projects'><ShimmerButton title='Show my Work' icon={<GoZap />} position='right'/></a>
