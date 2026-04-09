@@ -4,8 +4,10 @@ import { BackgroundGradientAnimation } from "./background-gradient-animation";
 import GridGlobe from "./gridGlobe";
 import { div } from "three/webgpu";
 import { useState } from "react";
-import Lottie from "react-lottie";
+import dynamic from "next/dynamic";
 import animationData from '@/data/confetti.json'
+
+const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 import ShimmerButton from "../ShimmerButton";
 import { IoCopyOutline } from "react-icons/io5";
 
