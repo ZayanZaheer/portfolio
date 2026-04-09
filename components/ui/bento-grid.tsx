@@ -2,12 +2,9 @@
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./background-gradient-animation";
 import GridGlobe from "./gridGlobe";
-import { div } from "three/webgpu";
 import { useState } from "react";
-import dynamic from "next/dynamic";
+import Lottie from "lottie-react";
 import animationData from '@/data/confetti.json'
-
-const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 import ShimmerButton from "../ShimmerButton";
 import { IoCopyOutline } from "react-icons/io5";
 
@@ -51,28 +48,27 @@ export const BentoGridItem = ({
 }) => {
   const [copied, setCopied] = useState(false)
 
-  const defaultOptions = {
-    loop: copied,
-    autoplay: copied,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+
 
   const handleCopy = async () => {
+    const text = "m.zayan.zaheer@gmail.com";
     try {
-      const text = "m.zayan.zaheer@gmail.com";
       await navigator.clipboard.writeText(text);
-      setCopied(true);
-  
-      // Reset the copied state after a delay
-      setTimeout(() => {
-        setCopied(false);
-      }, 3000); // Reset after 3 seconds
-    } catch (err) {
-      console.error("Failed to copy email: ", err);
+    } catch {
+      // Fallback for insecure contexts or denied permissions
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
     }
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 3000);
   };
   {/* */}
   return (
@@ -98,9 +94,11 @@ export const BentoGridItem = ({
           )}
         </div>
         {id === 6 && (
-          <BackgroundGradientAnimation>
-            <div className="absolute z-50 flex items-center justify-center text-white font-bold"/>
-          </BackgroundGradientAnimation>
+          <div className="absolute inset-0 pointer-events-none">
+            <BackgroundGradientAnimation>
+              <div className="absolute z-50 flex items-center justify-center text-white font-bold"/>
+            </BackgroundGradientAnimation>
+          </div>
         )}
 
         <div className={cn(titleClassName, 'group-hover/bento: translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10')}>
@@ -138,9 +136,9 @@ export const BentoGridItem = ({
         )}
 
         {id === 6 && (
-          <div className="mt-5 relative">
+          <div className="mt-5 relative z-10">
             <div className={'absolute -bottom-5 right-0'}>
-              <Lottie options ={defaultOptions}/>
+              <Lottie animationData={animationData} loop={copied} autoplay={copied}/>
             </div>
             <ShimmerButton title={copied ? "Email is Copied!" : "My email address"}
                 icon={<IoCopyOutline />}
