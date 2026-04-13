@@ -7,7 +7,7 @@ import { socialMedia } from '@/data'
 const Footer = () => {
   return (
     <footer className='w-full pb-10 mb-[100px] md:mb-5' id='contact'>
-        <div className='w-full absolute left-0 -bottom-72 min-h-96'>
+        <div className='w-full absolute left-0 -bottom-72 min-h-96 pointer-events-none'>
             <img src="/footer-grid.svg" alt="grid" className='w-full h-full opacity-50'/>
         </div>
         <div className='flex flex-col items-center'>

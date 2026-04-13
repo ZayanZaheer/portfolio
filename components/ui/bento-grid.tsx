@@ -137,7 +137,7 @@ export const BentoGridItem = ({
 
         {id === 6 && (
           <div className="mt-5 relative z-10">
-            <div className={'absolute -bottom-5 right-0'}>
+            <div className={'absolute -bottom-5 right-0 pointer-events-none'}>
               <Lottie animationData={animationData} loop={copied} autoplay={copied}/>
             </div>
             <ShimmerButton title={copied ? "Email is Copied!" : "My email address"}
