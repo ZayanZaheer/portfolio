@@ -49,7 +49,7 @@ export const GridItems = [
 
   {
     id: 5,
-    title: "Currently marketing website for naval logistics services using Next.js and Tailwind CSS.",
+    title: "Currently Developping an ecommerce website for a handmade items",
     description: "The Inside Scoop",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -174,21 +174,21 @@ export const workExperience = [
   {
     id: 1,
     title: "Software Engineering Intern - Bank of Maldives",
-    desc: "Contributed to the development and maintenance of internal banking systems using C#, SSIS, and Microsoft SQL Server. Developed middleware solutions to process API responses and transform data for storage in the core database. Participated in debugging, testing, and optimizing data pipelines for reliability and performance. Collaborated with senior developers on live production issues, gaining hands-on experience in enterprise software environments.",
+    desc: "Assisted in developing and maintaining internal banking systems using C#, SSIS, and Microsoft SQL Server. Built middleware to process API responses and transform data for integration into core databases. Supported debugging, testing, and optimization of data pipelines to improve reliability and performance, while collaborating with senior developers to resolve live production issues in an enterprise environment.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
     title: "Freelance Full-Stack Software Engineering - Ant Queue",
-    desc: "Helped in the creation of development documentation for the project, including API documentation and user guides. Helped in creation the onboarding material for the application, including tutorials and walkthroughs to assist new users in getting started with the platform. ",
+    desc: "Supported the creation of project documentation, including API references and user guides. Contributed to onboarding materials such as tutorials and walkthroughs to help new users quickly understand and adopt the platform. ",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
     title: "Freelance Full-Stack Software Engineering - Payer",
-    desc: "Developed and maintained a cross-platform mobile application using React Native (Expo), implementing features such as authentication, payments, QR scan-to-pay, and account management features. Built and consumed GraphQL APIs to support efficient frontend data operations. Designed and implemented backend services and CRUD APIs using Laravel (PHP) to support mobile application workflows. Resolved UI and functional issues while improving performance, security, and session handling.",
+    desc: "Developed and maintained a cross-platform mobile application using React Native (Expo), implementing authentication, payments, QR scan-to-pay, and account management features. Built and integrated GraphQL APIs for efficient data handling, and created backend services with Laravel (PHP) to support application workflows. Resolved UI and functional issues while enhancing performance, security, and session management.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp3.svg",
   },
@@ -205,6 +205,7 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
+    link: "https://github.com/ZayanZaheer",
   },
   {
     id: 2,
